@@ -1,0 +1,235 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap');
+
+:root {
+  --style_txt: 'Stick No Bills', sans-serif;
+  --main_txt: 'Poppins', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--main_txt);
+  color: white;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden; /* prevents horizontal scrollbar */
+  overflow-y: auto;   /* normal vertical scroll */
+  background: #040406;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #040406;
+  position: relative;
+}
+
+/* Header */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.29) 0%, rgba(69, 68, 68, 0.48) 46.68%);
+  backdrop-filter: blur(15px);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Menu */
+#menu {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
+#menu a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#menu a:hover {
+  color: rgb(186, 186, 187);
+}
+
+/* Hero Section */
+#hero {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  z-index: 500;
+}
+
+/* Main Heading */
+#main_heading h1 {
+  position: absolute;
+  top: 257px;
+  left: 20px;
+  font-family: var(--style_txt);
+  font-weight: 400;
+  font-size: 90px;
+  line-height: 116px;
+  color: #ffffff;
+  max-width: 90%;
+}
+
+/* Subheading */
+#subheader {
+  position: relative;
+  top: 438px;
+  left: 33px;
+  font-family: var(--main_txt);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 52px;
+  letter-spacing: 0.05em;
+  color: #d3d3d3;
+  max-width: 50%;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Right Image */
+#right img {
+  position: absolute;
+  top: 135px;
+  right: 50px;
+  width: 534.76px;
+  height: 846.96px;
+}
+
+/* Call to Action */
+#call_to_action {
+  position: relative;
+  top: 650px;
+  left: 33px;
+  width: 350px;
+  height: 90px;
+  background: #00bfff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#call_to_action:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+#call_to_action h1 {
+  font-family: var(--style_txt);
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 52px;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+/* Decorative Images */
+.img1 {
+  position: absolute;
+  transform: translateX(-60px);
+  left: -100px;
+  z-index: 200;
+  animation: floatEllipse 6s ease-in-out infinite;
+}
+
+/* Ellipse Animation */
+.img2 {
+  position: absolute;
+  top: 579px;
+  right: -107px;
+  width: 500px;
+  height: 500px;
+  z-index: 200;
+  animation: floatEllipse 10s ease-in-out infinite;
+}
+
+/* Brand Logo */
+#bran_logo {
+  font-size: 30px;
+}
+
+
+.label
+{
+    /* Rectangle 4 */
+
+position: absolute;
+width: 150%;
+height: 88px;
+left: -116.11px;
+top: 1300px;
+
+background: #EF67BB;
+transform: rotate(-8.41deg);
+text-align: center;
+align-items: center;
+
+}
+
+.label p{
+    
+/* UI/UX Design ✦ iOS Apps ✦ Android Apps ✦ Web Apps ✦ Frontend ✦ Backend ✦ Full-Stack Development */
+height: 45px;
+font-family: 'Stick';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 100%;
+display: flex;
+align-items: flex-end;
+letter-spacing: 0.05em;
+
+
+} 
+/* --- Animations --- */
+
+/* Floating effect for ellipse */
+@keyframes floatEllipse {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(15deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Floating effect for right image */
+@keyframes floatRightImg {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+#hero_2nd {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  position:relative;
+  z-index: 500;
+  top: 1750px;
+  position: relative;
+  align-items: center;
+ 
+}
+
+#left_part
+{
+position: absolute;
+left: -200px;
+}
