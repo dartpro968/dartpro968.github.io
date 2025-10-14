@@ -216,20 +216,65 @@ letter-spacing: 0.05em;
   100% { transform: translateY(0) rotate(0deg); }
 }
 
-#hero_2nd {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  position:relative;
-  z-index: 500;
-  top: 1750px;
-  position: relative;
-  align-items: center;
- 
+
+  #hero_2nd {
+    width: 100%;
+    display: flex;
+    justify-content:flex-end;
+    position: relative;
+    z-index: 500;
+    top: 1720px;
+    position: relative;
+    align-items: center;
 }
+ 
+
 
 #left_part
 {
 position: absolute;
 left: -200px;
+z-index: 0;
+}
+
+#main_heading_2nd h1
+{
+  /* About Us. */
+
+position: absolute;
+width: 369px;
+height: 116px;
+right: 15px;
+
+font-family: var(--style_txt);
+font-style: normal;
+font-weight: 400;
+font-size: 80px;
+line-height: 116px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+}
+
+#subheader-2nd
+{
+  /* We’re a passionate freelancing team specializing in creating user-friendly designs and powerful applications. With expertise across UI/UX, mobile, and web development, our goal is to turn complex problems into simple, intuitive, and scalable digital solutions */
+
+position: relative;
+width: 837px;
+height: 656px;
+right: 108px;
+top:100px;
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 52px;
+text-align: right;
+letter-spacing: 0.08em;
+
+color: #FFFFFF;
+
+
 }
