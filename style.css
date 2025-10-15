@@ -1,7 +1,6 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
   --style_txt: 'Stick No Bills', sans-serif;
@@ -18,11 +17,11 @@
   color: white;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   min-height: 100%;
-  overflow-x: hidden; /* prevents horizontal scrollbar */
-  overflow-y: auto;   /* normal vertical scroll */
+  overflow-x: hidden;
   background: #040406;
 }
 
@@ -93,15 +92,11 @@ html, body {
   position: relative;
   top: 438px;
   left: 33px;
-  font-family: var(--main_txt);
   font-weight: 400;
   font-size: 30px;
   line-height: 52px;
-  letter-spacing: 0.05em;
   color: #d3d3d3;
   max-width: 50%;
-  display: flex;
-  align-items: flex-end;
 }
 
 /* Right Image */
@@ -111,6 +106,7 @@ html, body {
   right: 50px;
   width: 534.76px;
   height: 846.96px;
+  animation: floatRightImg 8s ease-in-out infinite;
 }
 
 /* Call to Action */
@@ -135,146 +131,461 @@ html, body {
 
 #call_to_action h1 {
   font-family: var(--style_txt);
-  font-weight: 400;
   font-size: 25px;
-  line-height: 52px;
-  color: #ffffff;
-  letter-spacing: 0.05em;
 }
 
 /* Decorative Images */
 .img1 {
   position: absolute;
-  transform: translateX(-60px);
   left: -100px;
-  z-index: 200;
   animation: floatEllipse 6s ease-in-out infinite;
 }
 
-/* Ellipse Animation */
 .img2 {
   position: absolute;
   top: 579px;
   right: -107px;
   width: 500px;
   height: 500px;
-  z-index: 200;
   animation: floatEllipse 10s ease-in-out infinite;
 }
 
-/* Brand Logo */
-#bran_logo {
-  font-size: 30px;
+/* Banner */
+.label {
+  position: absolute;
+  width: 150%;
+  height: 88px;
+  left: -116.11px;
+  top: 1300px;
+  background: #ef67bb;
+  transform: rotate(-8.41deg);
+  text-align: center;
 }
 
-
-.label
-{
-    /* Rectangle 4 */
-
-position: absolute;
-width: 150%;
-height: 88px;
-left: -116.11px;
-top: 1300px;
-
-background: #EF67BB;
-transform: rotate(-8.41deg);
-text-align: center;
-align-items: center;
-
+.label p {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.label p{
-    
-/* UI/UX Design ✦ iOS Apps ✦ Android Apps ✦ Web Apps ✦ Frontend ✦ Backend ✦ Full-Stack Development */
-height: 45px;
-font-family: 'Stick';
-font-style: normal;
-font-weight: 400;
-font-size: 36px;
-line-height: 100%;
-display: flex;
-align-items: flex-end;
-letter-spacing: 0.05em;
-
-
-} 
-/* --- Animations --- */
-
-/* Floating effect for ellipse */
+/* Animations */
 @keyframes floatEllipse {
   0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(15deg); }
+  50% { transform: translateY(-30px) rotate(15deg); }
   100% { transform: translateY(0) rotate(0deg); }
 }
 
-/* Floating effect for right image */
 @keyframes floatRightImg {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(-5deg); }
-  100% { transform: translateY(0) rotate(0deg); }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0); }
 }
 
+/* About */
+#hero_2nd {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 1720px;
+  align-items: center;
+}
+
+#left_part {
+  position: absolute;
+  left: -200px;
+  z-index: 0;
+  top:-240px;
+}
+
+#main_heading_2nd h1 {
+  position: absolute;
+  right: 111px;
+  font-family: var(--style_txt);
+  font-size: 80px;
+}
+
+#subheader-2nd {
+  position: relative;
+  width: 837px;
+  right: 108px;
+  top: 100px;
+  font-size: 25px;
+  line-height: 52px;
+  text-align: right;
+  color: #fff;
+}
+
+/* Services */
+.service_section {
+  position: absolute;
+  top: 2800px;
+  width: 100%;
+}
+
+.outter_box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#service_data {
+  width: 318px;
+  height: 361px;
+  background: rgba(136, 229, 255, 0.2);
+  box-shadow: inset 0px 4px 4px #ffffff;
+  border-radius: 23px;
+  backdrop-filter: blur(15px);
+  z-index: 500;
+}
+
+.outter_box h1 {
+  font-family: var(--style_txt);
+  font-size: 80px;
+  margin: 48px;
+}
+
+/* Ellipses */
+.eclips31 {
+  position: absolute;
+  width: 692px;
+  height: 657px;
+  left: -20px;
+  top: 3095px;
+  transform: rotate(69.63deg);
+  animation: eclips4 8s ease-in infinite;
+}
+
+.eclips41 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 999px;
+  top: 3067px;
+  animation: eclips3 8s ease-in infinite;
+}
+
+@keyframes eclips3 {
+  0% { transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(-30px) rotate(25deg); }
+  100% { transform: translateX(0) rotate(0deg); }
+}
+
+@keyframes eclips4 {
+  0% { transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(-30px) rotate(50deg); }
+  100% { transform: translateX(0) rotate(0deg); }
+}
+
+/* --- TEAM SECTION --- */
+.team_section {
+  width: 100%;
+  position: relative;
+  top: 3200px;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.team_section h1 {
+  font-family: var(--style_txt);
+  font-size: 80px;
+  color: #fff;
+  margin-bottom: 70px;
+}
+
+.team_container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.team_card {
+  width: 280px;
+  height: 380px;
+  background: rgba(136, 229, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: inset 0 2px 5px #ffffff;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.team_card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+.team_card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.team_card h2 {
+  font-family: var(--style_txt);
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.team_card p {
+  font-family: var(--main_txt);
+  font-size: 18px;
+  color: #d3d3d3;
+}
+
+/* --- CONTACT SECTION --- */
+.contact_section {
+  width: 100%;
+  background: linear-gradient(180deg, #040406 0%, #0a0a13 100%);
+  padding: 120px 20px;
+  position: relative;
+  top: 3300px;
+}
+
+.contact_section h1 {
+  font-family: var(--style_txt);
+  font-size: 80px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.contact_info p {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.contact_form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact_form input,
+.contact_form textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.contact_form button {
+  background: #00bfff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  color: #fff;
+  font-size: 18px;
+  font-family: var(--style_txt);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.contact_form button:hover {
+  transform: translateY(-3px);
+}
+
+/* --- FOOTER --- */
+footer {
+  width: 100%;
+  background: #020202;
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+  top: 3400px;
+}
+
+footer p {
+  font-size: 18px;
+  color: #bbb;
+}
+
+footer .socials {
+  margin-top: 15px;
+}
+
+footer .socials a {
+  color: #00bfff;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer .socials a:hover {
+  color: #fff;
+}
+
+
+/* --- TABLETS (1024px) --- */
+@media (max-width: 1024px) {
+  #hero {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 180px;
+  }
+
+  #main_heading h1 {
+    font-size: 60px;
+    top: 220px;
+    left: 20px;
+  }
+
+  #subheader {
+    font-size: 22px;
+    top: 380px;
+    left: 20px;
+    max-width: 80%;
+  }
+
+  #right img {
+    width: 400px;
+    height: auto;
+    top: 150px;
+    right: 20px;
+  }
+
+  #call_to_action {
+    top: 600px;
+    left: 20px;
+    width: 300px;
+    height: 80px;
+  }
 
   #hero_2nd {
-    width: 100%;
-    display: flex;
-    justify-content:flex-end;
+    flex-direction: column;
+    top: 1600px;
+  }
+
+  #left_part {
     position: relative;
-    z-index: 500;
-    top: 1720px;
-    position: relative;
+    left: 0;
+    top: 0;
+    margin-bottom: 50px;
+  }
+
+  #main_heading_2nd h1 {
+    font-size: 60px;
+    right: 0;
+    text-align: center;
+  }
+
+  #subheader-2nd {
+    font-size: 22px;
+    text-align: center;
+    right: 0;
+    width: 90%;
+    top: 20px;
+  }
+
+  #box {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .team_container {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .contact_container {
+    flex-direction: column;
     align-items: center;
-}
- 
-
-
-#left_part
-{
-position: absolute;
-left: -200px;
-z-index: 0;
+  }
 }
 
-#main_heading_2nd h1
-{
-  /* About Us. */
+/* --- MOBILE (768px) --- */
+@media (max-width: 768px) {
+  #main_heading h1 {
+    font-size: 40px;
+    top: 180px;
+  }
 
-position: absolute;
-width: 369px;
-height: 116px;
-right: 15px;
+  #subheader {
+    font-size: 18px;
+    top: 300px;
+    left: 10px;
+    max-width: 90%;
+  }
 
-font-family: var(--style_txt);
-font-style: normal;
-font-weight: 400;
-font-size: 80px;
-line-height: 116px;
-/* identical to box height */
+  #right img {
+    width: 300px;
+    height: auto;
+    top: 120px;
+    right: 0;
+  }
 
-color: #FFFFFF;
+  #call_to_action {
+    top: 500px;
+    left: 10px;
+    width: 250px;
+    height: 70px;
+  }
 
+  #hero_2nd {
+    flex-direction: column;
+    top: 1500px;
+  }
 
-}
+  #main_heading_2nd h1 {
+    font-size: 45px;
+    text-align: center;
+  }
 
-#subheader-2nd
-{
-  /* We’re a passionate freelancing team specializing in creating user-friendly designs and powerful applications. With expertise across UI/UX, mobile, and web development, our goal is to turn complex problems into simple, intuitive, and scalable digital solutions */
+  #subheader-2nd {
+    font-size: 18px;
+    text-align: center;
+    width: 95%;
+    top: 10px;
+  }
 
-position: relative;
-width: 837px;
-height: 656px;
-right: 108px;
-top:100px;
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 52px;
-text-align: right;
-letter-spacing: 0.08em;
+  #box {
+    flex-direction: column;
+    gap: 20px;
+  }
 
-color: #FFFFFF;
+  .team_container {
+    flex-direction: column;
+    gap: 20px;
+  }
 
+  .team_card {
+    width: 90%;
+    max-width: 300px;
+  }
 
+  .contact_form {
+    width: 90%;
+  }
+
+  #left_part video {
+    width: 90%;
+    height: auto;
+  }
 }

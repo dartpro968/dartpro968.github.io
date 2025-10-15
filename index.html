@@ -9,27 +9,31 @@
       href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@200..800&display=swap"
       rel="stylesheet"
     />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
-    <title>Protfolio webpage</title>
+    <title>Portfolio Webpage | OCTO-TECH</title>
   </head>
+
   <body>
     <div class="container">
       <img src="./assets/images/full-eclips.png" class="img1" />
       <img src="./assets/images/full-eclips.png" class="img2" />
-      <!--         
-        header part strt  -->
+
+      <!-- Header -->
       <div id="header">
         <div id="bran_logo">OCTO-TECH</div>
         <div id="menu">
           <a href="#">Home</a>
           <a href="#">About</a>
-          <a href="#">services</a>
-          <a href="#">Contact us</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
         </div>
       </div>
-      <!-- <header part  ends> -->
-      <!-- hero section -->
+
+      <!-- Hero Section -->
       <div id="hero">
         <div id="left">
           <div id="main_heading">
@@ -42,54 +46,121 @@
           </div>
         </div>
         <div id="right">
-          <img src="./assets/images/mob_phone.png" alt="image" />
+          <img
+            src="./assets/images/mob_phone.png"
+            alt="image"
+            class="phone_img"
+          />
         </div>
       </div>
-      <!-- call to action -->
+
+      <!-- Call to Action -->
       <div id="call_to_action">
-        <h1>Start your Porject ></h1>
+        <h1>Start your Project ></h1>
       </div>
 
-      <!-- banner label -->
+      <!-- Banner Label -->
       <div class="label">
-        <marquee
-          direction="right"
-          scrollamount="5"
-          behavior="alternate"
-          loop="50"
-          ><p>
+        <marquee direction="right" scrollamount="5" behavior="alternate" loop="50">
+          <p>
             UI/UX Design ✦ iOS Apps ✦ Android Apps ✦ Web Apps ✦ Frontend ✦
             Backend ✦ Full-Stack Development ✦ Analytics ✦ E-comm ✦ Shopify ✦
             UI/UX Design ✦ iOS Apps ✦ Android Apps ✦ Web Apps ✦ Frontend ✦
             Backend ✦ Full-Stack Development ✦ Analytics ✦ E-comm ✦ Shopify
-          </p></marquee
-        >
+          </p>
+        </marquee>
       </div>
 
-      <!-- about us part -->
+      <!-- About Section -->
       <div id="hero_2nd">
         <div id="left_part">
           <video width="1000" height="1000" autoplay muted loop>
             <source src="assets/video/bubble_video.mp4" type="video/mp4" />
           </video>
         </div>
-
         <div id="right_part">
           <div id="main_heading_2nd">
             <h1>About Us</h1>
-            </div>
-            <p id="subheader-2nd">
-              We are a dynamic team with expertise in E-commerce, Android, and
-              iOS development. After helping you build and scale your app, we go
-              one step further — enabling data-driven decision-making through
-              customized and professional dashboards built with Power BI.
-            </p>
+          </div>
+          <p id="subheader-2nd">
+            We are a dynamic team with expertise in E-commerce, Android, and
+            iOS development. After helping you build and scale your app, we go
+            one step further — enabling data-driven decision-making through
+            customized and professional dashboards built with Power BI.
+          </p>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="service_section">
+        <div class="outter_box">
+          <h1>Our Services</h1>
+          <div id="box">
+            <p id="service_data"></p>
+            <p id="service_data"></p>
+            <p id="service_data"></p>
+            <p id="service_data"></p>
           </div>
         </div>
-
-        <!-- Service page -->
-         <h1>Our Services</h1>
       </div>
- 
+
+      <!-- Decorative Ellipses -->
+      <img src="assets/images/ecllips_3.png" class="eclips31" />
+      <img src="assets/images/ecllips_3.png" class="eclips41" />
+
+      <!-- ================= NEW SECTIONS ================= -->
+
+      <!-- Team Section -->
+      <div class="team_section">
+        <h1>Meet Our Team</h1>
+        <div class="team_container">
+          <div class="team_card">
+            <img src="./assets/images/team1.jpg" alt="Team Member" />
+            <h2>Ravi</h2>
+            <p>Android/ IOS Develoepr</p>
+          </div>
+          <div class="team_card">
+            <img src="./assets/images/team2.jpg" alt="Team Member" />
+            <h2>Sandeep</h2>
+            <p>Data Analyst/ Backend</p>
+          </div>
+          <div class="team_card">
+            <img src="./assets/images/team3.jpg" alt="Team Member" />
+            <h2>Abhishek</h2>
+            <p>Shopify/ UI/UX Dsigner</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="contact_section">
+        <h1>Contact Us</h1>
+        <div class="contact_container">
+          <div class="contact_info">
+            <p><strong>Email:</strong> hello@octotech.com</p>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <p><strong>Address:</strong> OctoTech HQ, Bengaluru, India</p>
+          </div>
+          <form class="contact_form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" rows="4"></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <p>© 2025 OCTO-TECH. All rights reserved.</p>
+        <div class="socials">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
   </body>
 </html>
