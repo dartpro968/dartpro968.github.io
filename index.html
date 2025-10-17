@@ -14,11 +14,19 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="./style.css" />
+<script src="app.js"></script>
+
+
     <title>Portfolio Webpage | OCTO-TECH</title>
   </head>
 
   <body>
+    <div id="cursor"></div>
     <div class="container">
       <img src="./assets/images/full-eclips.png" class="img1" />
       <img src="./assets/images/full-eclips.png" class="img2" />
@@ -35,7 +43,7 @@
         
   
         </div>
-        <p class="Talk_to_us">Talk to us</p>
+        <p id="Talk_to_us">Talk to us</p>
       </div>
 
       <!-- Hero Section -->
@@ -175,5 +183,18 @@ Apps</p>
     </div>
 
     <script src="app.js"></script>
+    <script>
+      let main_data=document.querySelector(".container");
+      let cursor=document.querySelector("#cursor");
+
+
+main_data.addEventListener('mousemove',(value)=>{
+  gsap.to(cursor,{
+    x:value.x,
+    y:value.y,
+    
+  });
+});
+    </script>
   </body>
 </html>

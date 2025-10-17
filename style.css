@@ -23,6 +23,7 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   background: #040406;
+  
 }
 
 /* Container */
@@ -125,7 +126,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.Talk_to_us
+#Talk_to_us
 {
   position: relative;
   width: 150px;
@@ -153,6 +154,22 @@ p#service_data{
     font-size: 50px;
     font-family: var(--style_txt);
     text-align: center;
+
+
+
+  }
+
+#cursor
+{
+  
+  width: 50px;
+  height: 50px;
+  opacity: 0.7;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.444);
+  position: fixed;
+  z-index:5000;
+  cursor: none;
 }
 
 #call_to_action:hover {
