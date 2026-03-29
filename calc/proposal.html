@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Lease Financial Proposal</title>
+    <meta name="description"
+        content="A professional commercial real estate lease proposal builder with automated financial projections and escalations.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="proposal-app">
+        <!-- Header -->
+        <header class="proposal-header">
+            <div class="brand" id="brand-display">
+                <div id="brand-logo-container" style="display: flex; align-items: center; gap: 0.75rem;">
+                    <i data-lucide="building-2"></i>
+                </div>
+                <span id="brand-name-text">Smart Pitch</span>
+            </div>
+            <div class="proposal-title">
+                <h1>Proposal Sheet</h1>
+                <span class="badge">Commercial Confidential</span>
+            </div>
+            <div class="actions">
+                <button class="secondary-btn" onclick="window.print()"><i data-lucide="printer"></i> Print
+                    Pitch</button>
+            </div>
+        </header>
+
+        <main class="proposal-grid">
+            <!-- Left Side: Inputs -->
+            <section class="param-panel card">
+                <div class="section-header">
+                    <i data-lucide="settings-2"></i>
+                    <h2>Proposal Parameters</h2>
+                </div>
+
+                <div class="input-section">
+                    <h3>1. Property Details</h3>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Area (Sq. Yards)</label>
+                            <div class="input-wrapper"><i data-lucide="layers"></i><input type="number" id="inp-sqyd"
+                                    value="133.33"></div>
+                        </div>
+                        <div class="input-group">
+                            <label>Area (Sq. Feet)</label>
+                            <div class="input-wrapper"><i data-lucide="maximize"></i><input type="number" id="inp-sqft"
+                                    value="1200"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <h3>2. Rental Structure</h3>
+                    <div class="input-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="input-group">
+                            <label>Base PSF (₹)</label>
+                            <div class="input-wrapper"><i data-lucide="indian-rupee"></i><input type="number"
+                                    id="inp-psf-base" value="50"></div>
+                        </div>
+                        <div class="input-group">
+                            <label>CAM PSF (₹)</label>
+                            <div class="input-wrapper"><i data-lucide="wrench"></i><input type="number" id="inp-psf-cam"
+                                    value="15"></div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Lease Term (Years)</label>
+                        <div class="input-wrapper"><i data-lucide="calendar"></i><input type="number" id="inp-term"
+                                value="5"></div>
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <h3>3. Escalation Terms</h3>
+                    <div class="input-group">
+                        <label>Annual Increase (%)</label>
+                        <div class="input-wrapper"><i data-lucide="trending-up"></i><input type="number" id="inp-esc"
+                                value="5"></div>
+                    </div>
+                    <p class="input-hint">Escalation is applied at the beginning of every subsequent year.</p>
+                </div>
+
+                <!-- Personalization & Settings -->
+                <div class="branding-section">
+                    <div class="section-header" style="margin-bottom: 1rem;">
+                        <i data-lucide="palette"></i>
+                        <h2 style="font-size: 1.1rem;">Branding & Print</h2>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Business Name</label>
+                        <div class="input-wrapper"><i data-lucide="type"></i><input type="text" id="inp-brand-name"
+                                placeholder="Contact/Company Name"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Business Logo</label>
+                        <div class="logo-preview-wrapper" id="logo-preview">
+                            <i data-lucide="image"></i>
+                        </div>
+                        <input type="file" id="inp-brand-logo" class="file-input" accept="image/*">
+                    </div>
+
+                    <div class="switch-group">
+                        <span style="font-size: 0.875rem; font-weight: 600;">Advanced Mode (Overrides)</span>
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-advanced">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-group">
+                        <span style="font-size: 0.875rem; font-weight: 600;">Print Two Copies (on A4)</span>
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-print-duo">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <button class="secondary-btn" id="btn-reset-branding"
+                        style="width: 100%; justify-content: center; margin-top: 0.5rem; font-size: 0.8rem;">
+                        <i data-lucide="refresh-ccw"></i> Reset to Default
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Side: Highlights & Summary -->
+            <section class="proposal-body">
+                <div class="highlights-row">
+                    <div class="highlight-card">
+                        <span class="label">Initial Monthly Outflow</span>
+                        <span class="value" id="res-monthly">₹0</span>
+                    </div>
+                    <div class="highlight-card primary">
+                        <span class="label">Total Financial Commitment</span>
+                        <span class="value" id="res-total">₹0</span>
+                    </div>
+                    <div class="highlight-card secondary">
+                        <span class="label">Weighted Avg. PSF</span>
+                        <span class="value" id="res-avg-psf">₹0</span>
+                    </div>
+                </div>
+
+                <!-- Annual Breakdown Table -->
+                <div class="card table-card">
+                    <div class="section-header">
+                        <i data-lucide="table"></i>
+                        <h2>Annual Rental Schedule</h2>
+                    </div>
+                    <div class="table-container">
+                        <table id="proposal-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>PSF (Base + CAM)</th>
+                                    <th>Monthly Total</th>
+                                    <th>Annual Total</th>
+                                    <th>Cumulative Outflow</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Injected via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Analytics Grid -->
+                <div class="analytics-grid">
+                    <!-- Chart 1: Cumulative -->
+                    <div class="card chart-card full-width">
+                        <div class="section-header">
+                            <i data-lucide="line-chart"></i>
+                            <h2>Cumulative Cash Outflow</h2>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="proposalChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Chart 2: Annual Breakdown -->
+                    <div class="card chart-card">
+                        <div class="section-header">
+                            <i data-lucide="bar-chart-3"></i>
+                            <h2>Annual Rental Expense</h2>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="annualChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Chart 3: Composition -->
+                    <div class="card chart-card">
+                        <div class="section-header">
+                            <i data-lucide="pie-chart"></i>
+                            <h2>Total Cost Composition</h2>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="compositionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="proposal-footer">
+            <div class="pitch-quote">
+                <i data-lucide="quote"></i>
+                <p>This financial proposal highlights the long-term investment and stability of the lease agreement,
+                    ensuring transparency for all stakeholders.</p>
+            </div>
+            <p class="disclaimer">Note: Calculations are based on data provided and standard financial compounding
+                models. Actual terms may vary.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
