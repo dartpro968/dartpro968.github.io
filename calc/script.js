@@ -92,7 +92,7 @@ function loadAppState() {
 function updateBrandUI() {
     elements.brandNameText.innerText = elements.brandNameInput.value || 'Smart Pitch';
     if (state.brandLogo) {
-        elements.brandLogoContainer.innerHTML = `<img src="${state.brandLogo}" style="height: 32px; width: 32px; object-fit: contain;">`;
+        elements.brandLogoContainer.innerHTML = `<img src="${state.brandLogo}" style="height: 50px; width: 50px; object-fit: contain;">`;
         elements.logoPreview.innerHTML = `<img src="${state.brandLogo}">`;
     } else {
         elements.brandLogoContainer.innerHTML = `<i data-lucide="building-2"></i>`;
